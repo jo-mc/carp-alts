@@ -1,27 +1,34 @@
 #! /usr/bin/awk -f
 
-#/ Copyright ©2021 J McConnell	. All rights reserved.
+
+#/ Copyright ©2021 J McConnell  . All rights reserved.
 #// Use of this source code is governed by a BSD-style
 #// license that can be found in the LICENSE.txt file.
 
-# Requirments
-# directory fa with your fasta files   ~< 100M each
-# directory scripts   (temp scripts written here)
-# directory gff   outputs written here
-# update email for failure messages from phoenix.
 
 # AWK reimplementation of https://github.com/biogo/examples/blob/master/krishna/matrix/matrix.go
-# Customised for Adelaide Uni phoenix HPC, 
-#  uses phoenix $TMPDIR which is currently only on high mem nodes: but should be on others at some stage!
-# build and submits scripts to run krishna
 
-# Alter SBATCH settigns as requried, setting ran on 2G platypus genome, bundled to 80,000,000 
+# Customised for Adelaide Uni phoenix HPC,
+# uses phoenix $TMPDIR which is currently only on high mem nodes: but should be on others at some stage!
+
+# rematrix builds and submits scripts to run 'krishna' (Pairwise Aligner for Long Sequences) using a set of fasta files.
+
+# Requirements
+
+#    directory fa with your fasta files ~< 100M each
+#    directory scripts (temp scripts written here)
+#    directory gff where krishna outputs are written
+#    update the email for failure messages from phoenix.
+
+# Alter SBATCH settings as requried, current settings ran on 2G platypus genome, bundled to 80,000,000
 # Also set krishna filters/flags as required.
 
-# Issues if jobs fail can be hard to track down, will be in slurm log file, and email of fail will go to nominated user.
+# Issues: if jobs fail can be hard to track down (if hundreds of files, ie 10 or more regions to align), 
+# will be in slurm log file, and email of fail will go to nominated user.
 
-# To test if scripts are created correctly, 
-# comment out the two line with "command print...."  you can then verify scripts.
+# To test if scripts are created correctly,
+# comment out the two line with "command print...." you can then verify scripts.
+
 
 BEGIN  {
 
