@@ -41,12 +41,11 @@ sbtch = "#!/bin/bash\n" \
 "#SBATCH --gres=tmpfs:64G\n" \
 "# Notification configuration\n" \
 "#SBATCH --mail-type=FAIL\n" \
-#
-#   YOUR EMAIL HERE: replace x.y
 "#SBATCH --mail-user=XXXXXX.YYYYYY@adelaide.edu.au\n\n" \
+"krishna -tmp=$TMPDIR -threads=8 -log -filtid=0.94 -filtlen=400 -target="
+
 #
-#
-sbtch = sbtch "krishna -tmp=$TMPDIR -threads=8 -log -filtid=0.94 -filtlen=400 -target="
+#   note: REPLACE  -user=XXXXXX.YYYYYY@adelaide.edu.au with your EMAIL HERE!  replace xxxx.yyyy
 
 command = "ls fa/*.fa"
 x = 0
