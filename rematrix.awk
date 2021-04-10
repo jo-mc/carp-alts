@@ -46,7 +46,7 @@ sbtch = "#!/bin/bash\n" \
 "#SBATCH --mail-user=XXXXXX.YYYYYY@adelaide.edu.au\n\n" \
 #
 #
-"krishna -tmp=$TMPDIR -threads=8 -log -filtid=0.94 -filtlen=400 -target="
+sbtch = sbtch "krishna -tmp=$TMPDIR -threads=8 -log -filtid=0.94 -filtlen=400 -target="
 
 command = "ls fa/*.fa"
 x = 0
