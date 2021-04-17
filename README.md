@@ -27,4 +27,7 @@
  comment out the two line with "command print...."  you can then verify scripts.
 
 ---
- 
+
+### reslurm.awk
+ Convert a phoenix slurm output script into csv data.
+
